@@ -1,0 +1,98 @@
+<html lang="en" class="no-js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Operations Handover Checklist</title>
+		<meta name="description" content="Checklist" />
+		<meta name="keywords" content="Checklist" />
+		<meta name="author" content="vmathur" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+    <script>
+    var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+  console.log(hi);
+    doc.fromHTML($('#container').html(), 15, 15, {
+
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('opsChecklist.pdf');
+});
+</script>
+	</head>
+	<body>
+
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="Link To Dashboard-TBC"><span>Ops Dashboard</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="Link To Dashboard - TBC"><span>Ops Dashboard 2</span></a></span>
+			</div>
+			<header>
+				<h1>Platform Support Handover Checklist<span> Items mentioned here will mark the production readniess of delivery scope in-line</span></h1>
+				<p>Please select the items that are applicable to your delivery scope.</p>
+        <div class="editor"></div>
+      <button id="cmd">generate PDF</button>
+    </a>
+			</header>
+<section>
+				<form class="ac-custom ac-checkbox ac-boxfill" autocomplete="off">
+					<h2>Type Of Functional Scope Being Delivered?</h2>
+					<ul>
+						<li><input id="cb10" name="cb10" type="checkbox"><label for="cb10">Microservice Based Application</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+						<li><input id="cb11" name="cb11" type="checkbox"><label for="cb11">Independent API</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+						<li><input id="cb12" name="cb12" type="checkbox"><label for="cb12">Existing Platform Enhancement</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+						<li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Endeca Scope</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Operational Scope - Scheduler/Utility</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+          </ul>
+          <h2></h2>
+          <h2>Infrastructre and Release</h2>
+					<ul>
+						<li><input id="cb10" name="cb10" type="checkbox"><label for="cb10">Code Repository Access</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+						<li><input id="cb11" name="cb11" type="checkbox"><label for="cb11">Branching Strategy</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+						<li><input id="cb12" name="cb12" type="checkbox"><label for="cb12">Build & Deploy Strategy</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+						<li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">B&D Tools Access for operations team</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">AML Configuration</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb10" name="cb10" type="checkbox"><label for="cb10">Lower Environment and Sapient Infra Setup Status (SIT2/SIT3/QA3)
+            </label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb11" name="cb11" type="checkbox"><label for="cb11">Firewall Changes</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb12" name="cb12" type="checkbox"><label for="cb12">Load Balancer Changes</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Cloud Region Details and Access</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Patch Deployment Strategy</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+            <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Batch jobs details</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+          </ul>
+          <h2></h2>
+            <h2>Alerting</h2>
+            <ul>
+              <li><input id="cb10" name="cb10" type="checkbox"><label for="cb10">AMS Tooling details - Alerting and Monitoring</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb11" name="cb11" type="checkbox"><label for="cb11">Access to Dashboards</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb12" name="cb12" type="checkbox"><label for="cb12">Splunk - AMS update</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Netcool - alerting</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Alerting Thresholds</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb10" name="cb10" type="checkbox"><label for="cb10">iLA Alerts</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb11" name="cb11" type="checkbox"><label for="cb11">Code Logging Standards</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb12" name="cb12" type="checkbox"><label for="cb12">SLA and L3 support closure</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+              <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13">Severity Matrix & Classification</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
+          </ul>
+				</form>
+			</section>
+    </div><!-- /container -->
+    <script src="js/svgcheckbx.js"></script>
+  </body>
+</html>
